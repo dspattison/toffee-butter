@@ -124,6 +124,31 @@ document.getElementById('prev').addEventListener('click', function () {
     userFeed.options.custom.showImage.call(userFeed);
   }
 });
+
+function resizeBg() {
+	var ratio = window.innerHeight / window.innerWidth;
+	var isWideScreen = window.innerHeight < window.innerWidth;
+	if (!isWideScreen) {
+		ratio = 1/ratio;
+	}
+	var bg = document.getElementById('bg');
+	if (!bg || !bg.children) {
+		setTimeout(resizeBg, 100);
+		return;
+	}
+	var img = bg.children[0];
+	
+	console.log('resize %o, %o, %o', img, ratio, isWideScreen);
+	if (isWideScreen) {
+		img.style.top = -((1-ratio)*100) + '%';
+		img.style.left = 0;
+	} else {
+		img.style.left = -((1-ratio)*100) + '%';
+		img.style.top = 0;
+	}
+}
+resizeBg();
+window.addEventListener('resize', resizeBg);
 </script>
   </body>
 </html>
