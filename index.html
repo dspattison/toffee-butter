@@ -33,6 +33,7 @@
 	top: 5%;
 	right: 5%;
 	max-width: 40%;
+	text-align: right;
 }
 #next {
 	position: fixed;
@@ -53,6 +54,21 @@
 	left: 5%;
 	max-width: 40%;
 }
+
+#bottom-left {
+	position: fixed;
+	bottom: 5%;
+	left: 5%;
+	max-width: 40%;
+}
+
+#bottom-right {
+	position: fixed;
+	bottom: 5%;
+	right: 5%;
+	max-width: 40%;
+	text-align: right;
+}
 </style>
  
   <div id="about" class="shadow">
@@ -60,6 +76,15 @@
   	My name is Toffee Butter Pattison.
   	I like long walks on the beach, espeically when I get wet. 
   	I like chasing balls, squirrels and basically everything else.
+  	I hope to meet you and give you a big puppy kiss.
+  </div>
+  
+  <div id="bottom-left" class="shadow">
+  	I was resuced from Long Beach SPCA.
+  	I love my mommy and daddy, Jeanne-Marie and David.
+  </div>
+  <div id="bottom-right" class="shadow">
+  	
   </div>
   <a href="#" id="prev" class="shadow">Prev</a>
   <a href="#" id="next" class="shadow">Next</a>
@@ -67,7 +92,6 @@
   
     <script src='instafeed.js'></script>
     <script type="text/javascript">
-    //
     var userFeed = new Instafeed({
         get: 'user',
         userId: 247045407,// toffee_butter
