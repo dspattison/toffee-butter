@@ -21,10 +21,30 @@
   left: 0;
   z-index: -1;
 }
-    </style>
- <div class="controls">
-  <div class="prev entypo-left-open-big">Prev</div>
-  <div class="next entypo-right-open-big">Next</div>
+.shadow {
+	background-color: #fff;
+	opacity: .7;
+	border-radius: 15px;
+	padding: 5px;
+}
+#caption {
+	display:block;
+	float:right;
+}
+#next {
+	position: fixed;
+	top: 50%;
+	right: 5%;
+}
+#prev {
+	position: fixed;
+	top: 50%;
+	left: 5%;
+}
+</style>
+ 
+  <div id="prev" class="shadow">Prev</div>
+  <div id="next" class="shadow">Next</div>
   
   
     <script src='instafeed.js'></script>
@@ -34,8 +54,8 @@
         get: 'user',
         userId: 247045407,// toffee_butter
         accessToken: '247045407.467ede5.1da81d145e4a4e6eb748cff3300c9b54',
-        template: '<div id="caption">{{caption}} <br>{{likes}} likes on my ' +
-            '<a href="http://instagram.com/toffee_butter">instagram</a></div>' +
+        template: '<span id="caption" class="shadow">{{caption}} <br>{{likes}} likes on my ' +
+            '<a href="http://instagram.com/toffee_butter">instagram</a></span>' +
             '<div id="bg"><img src="{{image}}" /></div>',
         sortby: 'random',
         resolution: 'standard_resolution',
@@ -66,6 +86,25 @@
         }
     });
     userFeed.run();
+    document.getElementById('next').addEventListener('click', function () {
+  var length, current;
+  current = userFeed.options.custom.currentImage;
+  length = userFeed.options.custom.images.length;
+  if (current < length - 1) {
+    userFeed.options.custom.currentImage++;
+    userFeed.options.custom.showImage.call(userFeed);
+  }
+});
+
+document.getElementById('prev').addEventListener('click', function () {
+  var length, current;
+  current = userFeed.options.custom.currentImage;
+  length = userFeed.options.custom.images.length;
+  if (current > 0) {
+    userFeed.options.custom.currentImage--
+    userFeed.options.custom.showImage.call(userFeed);
+  }
+});
 </script>
   </body>
 </html>
