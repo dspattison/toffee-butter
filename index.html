@@ -104,6 +104,8 @@
     });
     userFeed.run();
     document.getElementById('next').addEventListener('click', function () {
+    	// show that it is loading.
+    	document.getElementById('bg').style.opacity = .5;
   var length, current;
   current = userFeed.options.custom.currentImage;
   length = userFeed.options.custom.images.length;
