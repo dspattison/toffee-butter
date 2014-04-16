@@ -12,6 +12,12 @@
     ga('create', 'UA-40646320-3', 'auto');
     ga('send', 'pageview');
     </script>
+    <div id="instafeed"></div>
+ <div class="controls">
+  <div class="prev entypo-left-open-big"></div>
+  <div class="next entypo-right-open-big"></div>
+  
+  
     <script src='instafeed.js'></script>
     <script type="text/javascript">
     //
@@ -42,7 +48,7 @@
               comments: image.comments.count,
               location: this._getObjectProperty(image, 'location.name')
             });
-            $("#instafeed").html(result);
+            document.getElementById('instafeed').innerHTML = result;
           }
         },
         success: function (data) {
@@ -52,10 +58,7 @@
     });
     userFeed.run();
 </script>
-<div id="instafeed"></div>
- <div class="controls">
-  <div class="prev entypo-left-open-big"></div>
-  <div class="next entypo-right-open-big"></div>
+
 
     <img src='http://images.ak.instagram.com/profiles/profile_247045407_75sq_1382224324.jpg'/>
   </body>
