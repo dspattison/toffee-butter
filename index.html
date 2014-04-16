@@ -113,6 +113,7 @@
     userFeed.options.custom.currentImage++;
     userFeed.options.custom.showImage.call(userFeed);
   }
+  resizeBg();
 });
 
 document.getElementById('prev').addEventListener('click', function () {
@@ -123,6 +124,7 @@ document.getElementById('prev').addEventListener('click', function () {
     userFeed.options.custom.currentImage--
     userFeed.options.custom.showImage.call(userFeed);
   }
+  resizeBg();
 });
 
 function resizeBg() {
