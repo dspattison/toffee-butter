@@ -72,7 +72,7 @@
 </style>
  
   <div id="about" class="shadow">
-  	Hi!<br/>
+  	Woof!<br/>
   	My name is Toffee Butter Pattison.
   	I like long walks on the beach, espeically when I get wet. 
   	I like chasing balls, squirrels and basically everything else.
@@ -80,7 +80,7 @@
   </div>
   
   <div id="bottom-left" class="shadow">
-  	I was resuced from Long Beach SPCA.
+  	I was resuced from the Long Beach SPCA.
   	I love my mommy and daddy, Jeanne-Marie and David.
   </div>
   <div id="bottom-right" class="shadow">
@@ -153,12 +153,8 @@ document.getElementById('prev').addEventListener('click', function () {
 });
 
 function resizeBg() {
-	return; //disable
 	var ratio = window.innerHeight / window.innerWidth;
 	var isWideScreen = window.innerHeight < window.innerWidth;
-	if (!isWideScreen) {
-		ratio = 1/ratio;
-	}
 	var bg = document.getElementById('bg');
 	if (!bg || !bg.children) {
 		setTimeout(resizeBg, 100);
@@ -168,11 +164,11 @@ function resizeBg() {
 	
 	console.log('resize %o, %o, %o', img, ratio, isWideScreen);
 	if (isWideScreen) {
-		img.style.top = -((1-ratio)*100) + '%';
-		img.style.left = 0;
+		img.style.height = '';
+		img.style.width = '100%';
 	} else {
-		img.style.left = -((1-ratio)*100) + '%';
-		img.style.top = 0;
+		img.style.width = '';
+		img.style.height = '100%';
 	}
 }
 resizeBg();
