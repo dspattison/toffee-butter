@@ -18,7 +18,11 @@
     var userFeed = new Instafeed({
         get: 'user',
         userId: 247045407,// toffee_butter
-        accessToken: '247045407.467ede5.1da81d145e4a4e6eb748cff3300c9b54'
+        accessToken: '247045407.467ede5.1da81d145e4a4e6eb748cff3300c9b54',
+        template: '<div id="caption">{{caption}} <br>{{likes}} likes on my <a href="http://instagram.com/toffee_butter>instagram</a></div><div id="bg"><img src="{{image}}" /></div>',
+        sortby: 'random',
+        resolution: 'standard_resolution',
+        links: 'false'
     });
     userFeed.run();
     feed.run();
