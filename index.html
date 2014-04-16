@@ -29,8 +29,10 @@
 	padding: 5px;
 }
 #caption {
-	display:block;
-	float:right;
+	position: fixed;
+	top: 5%;
+	right: 5%;
+	max-width: 40%;
 }
 #next {
 	position: fixed;
@@ -128,6 +130,7 @@ document.getElementById('prev').addEventListener('click', function () {
 });
 
 function resizeBg() {
+	return; //disable
 	var ratio = window.innerHeight / window.innerWidth;
 	var isWideScreen = window.innerHeight < window.innerWidth;
 	if (!isWideScreen) {
