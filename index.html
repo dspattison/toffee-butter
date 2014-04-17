@@ -154,6 +154,7 @@
     userFeed.options.custom.showImage.call(userFeed);
   }
   resizeBg();
+  ga('send', 'event', 'page', 'next', null, 1);
 });
 
 document.getElementById('prev').addEventListener('click', function () {
