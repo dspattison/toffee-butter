@@ -12,6 +12,8 @@
     ga('create', 'UA-40646320-3', 'auto');
     ga('send', 'pageview');
     </script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquerymobile/1.4.2/jquery.mobile.min.js"></script>
     <div id="instafeed"></div>
     <style type="text/css">
 #bg img {
@@ -134,7 +136,7 @@
         }
     });
     userFeed.run();
-    document.getElementById('next').addEventListener('click', function () {
+    var next = function () {
     	// show that it is loading.
     	document.getElementById('bg').style.opacity = .5;
   var length, current;
@@ -146,9 +148,9 @@
   }
   resizeBg();
   ga('send', 'event', 'page', 'next', null, 1);
-});
+};
 
-document.getElementById('prev').addEventListener('click', function () {
+var prev = function () {
   var length, current;
   current = userFeed.options.custom.currentImage;
   length = userFeed.options.custom.images.length;
@@ -157,8 +159,9 @@ document.getElementById('prev').addEventListener('click', function () {
     userFeed.options.custom.showImage.call(userFeed);
   }
   resizeBg();
-});
-
+};
+document.getElementById('next').addEventListener('click', next);
+document.getElementById('prev').addEventListener('click', prev);
 function resizeBg() {
 	var ratio = window.innerHeight / window.innerWidth;
 	var isWideScreen = window.innerHeight < window.innerWidth;
@@ -180,6 +183,7 @@ function resizeBg() {
 }
 resizeBg();
 window.addEventListener('resize', resizeBg);
+//swipes!
 </script>
   </body>
 </html>
