@@ -42,13 +42,13 @@
 	position: fixed;
 	top: 50%;
 	right: 5%;
-	font-size: 200%;
+	/*font-size: 200%;*/
 }
 #prev {
 	position: fixed;
 	top: 50%;
 	left: 5%;
-	font-size: 200%;
+	/*font-size: 200%;*/
 }
 
 #about {
@@ -72,6 +72,14 @@
 	max-width: 40%;
 	text-align: right;
 }
+
+#center {
+	position: fixed;
+	text-align: center;
+	top: 50%;
+	right: 35%;
+	width: 30%;
+}
 </style>
  
   <div id="about" class="shadow">
@@ -93,6 +101,7 @@
   <a href="http://instagram.com/toffee_butter">instagram</a>
   or on a walkee!<br/>
   </div>
+  <div id="center" class="shadow">Swipe left/right to change picture.</div>
   <a href="#" id="prev" class="shadow">Prev</a>
   <a href="#" id="next" class="shadow">Next</a>
   
@@ -164,7 +173,11 @@ document.getElementById('next').addEventListener('click', next);
 document.getElementById('prev').addEventListener('click', prev);
 
 //swipes!
-$(window).on('swipe', next);
+$(window).on('swiperight', next);
+$(window).on('swipeleft', prev);
+
+//Fade center.
+$('#center').fadeOut(4000);
 function resizeBg() {
 	var ratio = window.innerHeight / window.innerWidth;
 	var isWideScreen = window.innerHeight < window.innerWidth;
