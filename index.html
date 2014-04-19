@@ -162,6 +162,9 @@ var prev = function () {
 };
 document.getElementById('next').addEventListener('click', next);
 document.getElementById('prev').addEventListener('click', prev);
+
+//swipes!
+$(window).on('swipe', next);
 function resizeBg() {
 	var ratio = window.innerHeight / window.innerWidth;
 	var isWideScreen = window.innerHeight < window.innerWidth;
@@ -183,7 +186,6 @@ function resizeBg() {
 }
 resizeBg();
 window.addEventListener('resize', resizeBg);
-//swipes!
 </script>
   </body>
 </html>
