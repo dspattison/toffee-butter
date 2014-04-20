@@ -99,7 +99,7 @@
   <a href="http://instagram.com/toffee_butter">instagram</a>
   or on a walkee!<br/>
   </div>
-  <div id="center" class="shadow">Swipe left/right to change picture.</div>
+  <div id="center" class="shadow">Swipe to change picture.</div>
   <a href="#" id="prev" class="shadow">Prev</a>
   <a href="#" id="next" class="shadow">Next</a>
   
@@ -173,8 +173,7 @@ document.getElementById('next').addEventListener('click', next);
 document.getElementById('prev').addEventListener('click', prev);
 
 //swipes!
-$(window).on('swipeleft', next);
-$(window).on('swiperight', prev);
+$(window).on('swipe', next);
 
 //Fade center.
 setTimeout(function() {
