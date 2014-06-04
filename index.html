@@ -9,7 +9,26 @@
     var ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
 
     ga('create', 'UA-40646320-3', 'auto');
-    ga('send', 'pageview');
+    var sent = false;
+    function send() {
+    	if (sent) return;
+    	sent = true;
+    	ga('send', 'pageview');
+    }
+    if ('ondevicemotion' in window) {
+    	setTimeout(send, 100);
+    	  function handleOrientation(event) {
+	    ga('set', '&dm1', Math.round(event.alpha));
+	    ga('set', '&dm2', Math.round(event.beta));
+	    ga('set', '&dm3', Math.round(event.gamma));
+	  }
+
+  	window.addEventListener("deviceorientation", handleOrientation, true);
+    } else {
+    	// no motion support.
+    	sent = true;
+    	ga('send', 'pageview');
+    }
     </script>
     <div id="instafeed"></div>
     <style type="text/css">
