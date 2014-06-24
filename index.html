@@ -213,8 +213,8 @@ function resizeBg() {
 		img.style.height = '';
 		img.style.width = '100%';
 	} else {
-		img.style.width = '';
-		img.style.height = '100%';
+		img.style.width = window.innerWidth + 'px';
+		img.style.height = window.innerHeight + 'px';
 	}
 }
 resizeBg();
