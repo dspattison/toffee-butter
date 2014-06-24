@@ -2,6 +2,7 @@
 <html>
   <head>
     <title>Toffee Butter</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=2.0" />
   </head>
   <body>
     <script async src='//www.google-analytics.com/analytics.js'></script>
@@ -202,7 +203,7 @@ function resizeBg() {
 	var isWideScreen = window.innerHeight < window.innerWidth;
 	var bg = document.getElementById('bg');
 	if (!bg || !bg.children) {
-		setTimeout(resizeBg, 100);
+		//setTimeout(resizeBg, 100);
 		return;
 	}
 	var img = bg.children[0];
