@@ -210,9 +210,9 @@ function resizeBg() {
 	console.log('resize %o, %o, %o', img, ratio, isWideScreen);
 	if (isWideScreen) {
 		img.style.height = '';
-		img.style.width = '100%';
-	} else {
 		img.style.width = window.innerWidth + 'px';
+	} else {
+		img.style.width = '';
 		img.style.height = window.innerHeight + 'px';
 	}
 }
