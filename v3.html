@@ -1,0 +1,32 @@
+
+<!doctype html>
+<html>
+  <head><title>v3 async</title>
+
+<!-- external script<p style='margin: 0 4px 4px 12px; font-size: 0.8em;'> on domain1 with a 2 second delay using HTML tags -->
+<script type='text/javascript' src='http://1.cuzillion.com/bin/resource.cgi?type=js&sleep=2&n=1&t=1414702941'></script>
+<!-- Google Analytics -->
+<script>
+(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+})(window,document,'script','https://www.google-analytics.com/analytics_debug.js','ga');
+ga('create', 'UA-%ACCOUNT%-1');
+ga('send', 'pageview');
+
+</script>
+
+<!-- Add async+defer script for preloader -->
+<!-- Ignore the "Tracking script already loaded. Abandoning initialization." in console. -->
+<script async defer src='https://www.google-analytics.com/analytics_debug.js'></script>
+<!-- End Google Analytics -->
+
+  </head>
+  <body>
+<h1>V3 async</h1>
+this has a js script in the front that causes a 1 sec delay
+  </body>
+</html>
+
+
+
